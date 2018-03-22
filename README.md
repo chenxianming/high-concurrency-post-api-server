@@ -103,20 +103,21 @@ POST验证之后的rsa加密数据参考client目录下的 getServiceRsaCheck.js
 
 # Perfomance
 
-以下是局域网客户端模拟请求访问情况
+<p>
+    以下是局域网客户端模拟请求访问情况<br />
+    客户端局域网 pm2 cluster mode 8线程post访问,单线程为200并发(8 * 200)<br />
+    <br />
+    ![post](http://coldnoir.com/testing/post.png)
+    <br />
+    服务端性能状况<br />
+    ![post](http://coldnoir.com/testing/1.png)
+    
+    客户端局域网 pm2 cluster mode 8线程post访问验证后返回rsa公钥,后端解密rsa字符串,每次调用500毫秒延迟回调,单线程为200并发(8 * 200)<br />
+    ![post](http://coldnoir.com/testing/rsa.png)<br /><br />
 
-客户端局域网 pm2 cluster mode 8线程post访问,单线程为200并发(8 * 200)
-![post](http://coldnoir.com/testing/post.png)
-
-服务端性能状况
-![post](http://coldnoir.com/testing/1.png)
-
-
-客户端局域网 pm2 cluster mode 8线程post访问验证后返回rsa公钥,后端解密rsa字符串,每次调用500毫秒延迟回调,单线程为200并发(8 * 200)
-![post](http://coldnoir.com/testing/rsa.png)
-
-服务端性能状况
-![post](http://coldnoir.com/testing/2.png)
+    服务端性能状况<br />
+    ![post](http://coldnoir.com/testing/2.png)<br /><br />
+</p>
 
 # installation
 

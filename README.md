@@ -109,13 +109,13 @@ POST验证之后的rsa加密数据参考client目录下的 getServiceRsaCheck.js
 ![post](http://coldnoir.com/testing/post.png)
 <br />
 服务端性能状况<br />
-![post](http://coldnoir.com/testing/1.png "width:483.5px" "height:278.5px")
+![post](http://coldnoir.com/testing/1.png "post" "width:483.5px" "height:278.5px")
 
 客户端局域网 pm2 cluster mode 8线程post访问验证后返回rsa公钥,后端解密rsa字符串,每次调用500毫秒延迟回调,单线程为200并发(8 * 200)<br />
 ![post](http://coldnoir.com/testing/rsa.png)<br /><br />
 
 服务端性能状况<br />
-![post](http://coldnoir.com/testing/2.png "width:483.5px" "height:387px")<br /><br />
+![rsa](http://coldnoir.com/testing/2.png "rsa" "width:483.5px" "height:387px")<br /><br />
 
 
 # installation

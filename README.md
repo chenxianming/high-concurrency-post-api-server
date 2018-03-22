@@ -18,14 +18,14 @@ nodejs搭建的高并发服务器集群 测试方式有普通post以及rsa加密
 </p>
 
 
-# service
+# Service
 
 <p>
     服务端基于express,放在lvs real server,每个相同,session存储在redis集群<br />
     服务端有验证中间件,通过第一次访问返回guid值以及加密code，客户端AES加密post数据，中间件解析该加密字符串再转json,同时验证cookie,过期时间为5分钟，每返回一次数据重新生成新的code,guid,返回用户,写入cookie<br />
 </p>
 
-# client
+# Client
 <p>
     访问post接口,用第一查询返回的数据进行AES加密,发送请求时发送加密code,guid,以及cookie,如以下案例(nodejs request模拟)
 </p>
@@ -118,7 +118,7 @@ POST验证之后的rsa加密数据参考client目录下的 getServiceRsaCheck.js
 ![rsa](http://coldnoir.com/testing/2.png)<br /><br />
 
 
-# installation
+# Installation
 
     git clone https://github.com/chenxianming/high-concurrency-post-api-server.git
     
@@ -188,7 +188,9 @@ POST验证之后的rsa加密数据参考client目录下的 getServiceRsaCheck.js
     该方案类似于node上的csrf库，不同的地方是
 </p>
 <p>
-   - 每次res结果重新生成新code,guid <br />
+   - 每次res结果重新生成新code,guid(思路) <br />
+   - 并非中间件(供于借鉴) <br />
+   - 测试每次通过getclient获取新生成的验证数据 <br />
    - 加密code可由guid通过自定义映射串生成映射生成 <br />
    - 没有验证headers模式(post表单文件上传)
    - 验证

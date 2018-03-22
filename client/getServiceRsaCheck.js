@@ -9,7 +9,7 @@ var key = new NodeRSA({b: 512});
 
 var arr = new Float32Array(500000);
 
-async.eachLimit(arr,1,(item,callback) => {
+async.eachLimit(arr,200,(item,callback) => {
 
     var jar = request.jar();
     
@@ -95,14 +95,14 @@ async.eachLimit(arr,1,(item,callback) => {
                 console.log( e );
             }
             
-            callback();
-            
+	       setTimeout(callback,500);
+ 
         });
         
         
     } ) ).catch( (e) => {
     
-        callback();
+	   setTimeout(callback,500);
 
     } );
     

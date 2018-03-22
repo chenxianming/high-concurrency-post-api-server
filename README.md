@@ -13,7 +13,7 @@ nodejs搭建的高并发服务器集群 测试方式有普通post以及rsa加密
     - 每台kvm 4核8g内存<br />
     - lvs dir x1 rr轮询<br />
     - lvs Real server x4 (4 core 8g)<br />
-    - redis cluster x4 (每台3个节点)
+    - redis cluster x3 (每台3个节点)
     - 每台 lvs Real server 通过pm2运行服务端文件,8 cluster mode
 </p>
 

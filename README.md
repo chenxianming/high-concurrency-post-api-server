@@ -17,6 +17,10 @@ nodejs搭建的高并发服务器集群 测试方式有普通post以及rsa加密
     - 每台 lvs Real server 通过pm2运行服务端文件,8 cluster mode
 </p>
 
+<p>
+    类似精简方案(仅验证每次变更csrf以及cookie)已运用在该项目 [Taplay](http://taplay.coldnoir.com)<br />
+    欢迎对接口进行压力测试(低配置vps,3M带宽,机械硬盘，非集群,非redis缓存)
+</p>
 
 # Service
 
